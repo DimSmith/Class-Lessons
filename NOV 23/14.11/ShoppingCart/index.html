@@ -25,7 +25,7 @@
                     data-bs-target="#shoppingCart">Shipping cart
                     <span class="badge bg-danger">3</span>
                 </button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
                     data-bs-target="#loginForm">Login</button>
             </div>
         </div>
@@ -106,7 +106,7 @@
                 <div class="modal-content">
                     <!--- header -->
                     <div class="modal-header">
-                        <h2 class="modal-title">Welcome User</h2>
+                        <h2 class="modal-title">Welcome</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <!-- body -->
@@ -119,8 +119,35 @@
                     </div>
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger">Register</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signIn">Sign In</button>
                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign in modal -->
+        <div class="modal" id="signIn">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--- header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title">Welcome New User</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- body -->
+                    <div class="modal-body">
+                        <label class="form-label">Username:</label><br />
+                        <input type="text" placeholder="Enter Your Name" /><br /><br />
+                        <label class="form-label">Email:</label><br />
+                        <input type="email" placeholder="Enter Email" /><br /><br />
+                        <label class="form-label">Password:</label><br />
+                        <input type="text" placeholder="Enter Password" /><br /><br />
+                        <label class="form-label">Confirm Password:</label><br />
+                        <input type="text" placeholder="Enter Password" /><br /><br />
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginForm">Register</button>
                     </div>
                 </div>
             </div>
