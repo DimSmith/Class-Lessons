@@ -12,6 +12,18 @@
             text-align: center;
             background-color: #2b2a2a;
         }
+        table.table-bordered{
+            border:1px solid black;
+            
+        }
+        table.table-bordered>thead>th>tr{
+            border-color:1px solid black;
+            font-weight: bold;  
+        }
+        table.table-bordered>tbody>tr>td{
+            border-color:1px solid black;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -19,8 +31,8 @@
     <!--Card-->
     <div class="row">
         <div class="col">
-            <div class="card mx-auto" style="width:250px">
-                <img class="card-img-top mx-auto" src="image/avatar.png" alt="Card image" style="width:200px">
+            <div class="card mx-auto bg-info" style="width:250px">
+                <img class="card-img-top mx-auto p-1" src="image/avatar.png" alt="Card image" style="width:200px">
                 <h4 class="card-header text-black">דמיטרי קוזנץ</h4>
                 <div class="card-text text-black">ברוך הבאה לאתר קורות החיים שלי</div>
                 <div class="card-footer">
@@ -38,22 +50,22 @@
                 <h2>פרטי קשר</h2>
                 <!-- body -->
                 <div class="modal-body">
-                    <table class="table table-borderless p-1">
+                    <table class="table table-borderless fw-bolder">
                         <tr>
-                            <th><img src="icons/phone.png"></th>
-                            <th>0526422439</th>
+                            <td><img src="icons/phone.png"></td>
+                            <td>0526422439</td>
                         </tr>
                         <tr>
-                            <th><img src="icons/atsign.png"></th>
-                            <th>dimkuz18@gmail.com</th>
+                            <td><img src="icons/atsign.png"></td>
+                            <td>dimkuz18@gmail.com</td>
                         </tr>
                         <tr>
-                            <th><img src="icons/linkedin.png"></th>
-                            <th>https://www.linkedin.com/in/dima-kuznets-935a83267/</th>
+                            <td><img src="icons/linkedin.png"></td>
+                            <td>https://www.linkedin.com/in/dima-kuznets-935a83267/</td>
                         </tr>
                         <tr>
-                            <th><img src="icons/github.png"></th>
-                            <th>https://github.com/dimSmith</th>
+                            <td><img src="icons/github.png"></td>
+                            <td>https://github.com/dimSmith</td>
                         </tr>
                     </table>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -64,7 +76,7 @@
     <!--Profile Modal-->
     <div class="modal" id="profile">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-info ">
                 <!-- header -->
                     <h2 class="modal-title mx-auto">קורות חיים</h2>
                 <!-- body -->
@@ -72,7 +84,7 @@
                     <!--פרטים אישיים-->
                     <table class="table table-bordered">
                         <thead>
-                            <tr>פרטים אישיים</tr>
+                            <th colspan="2">פרטים אישיים</th>
                         </thead>
                         <tr>
                             <td>שם</td>
@@ -92,13 +104,13 @@
                         </tr>
                     </table>
                     <!-- השכלה-->
-                    <table class="table table-bordered">
+                    <table class="table table-bordered ">
                         <thead>
-                            <tr>השכלה</tr>
+                            <th  colspan="2">השכלה</th>
                         </thead>
                         <tr>
                             <td>2015-2019</td>
-                            <td>תואר ראשון בסיעוד בטונברסיטה העברית ירושלים (B.S.N) שלוחת אסף הרופא</td>
+                            <td>תואר ראשון בסיעוד באונברסיטה העברית ירושלים (B.S.N) שלוחת אסף הרופא</td>
                         </tr>
                         <tr>
                             <td>2011</td>
@@ -108,7 +120,7 @@
                     <!-- צבא-->
                     <table class="table table-bordered">
                         <thead>
-                            <tr>שירות צבאי</tr>
+                            <th colspan="2">שירות צבאי</th>
                         </thead>
                         <tr>
                             <td>2011-2014</td>
@@ -118,7 +130,7 @@
                     <!--תעסוקה-->
                     <table class="table table-bordered">
                         <thead>
-                            <tr>ניסיון תעסוקתי</tr>
+                            <th colspan="2">ניסיון תעסוקתי</th>
                         </thead>
                         <tr>
                             <td>2019-</td>
@@ -132,7 +144,7 @@
                     <!--שפות-->
                     <table class="table table-bordered">
                         <thead>
-                            <tr>שפות</tr>
+                            <th colspan="2">שפות</th>
                         </thead>
                         <tr>
                             <td>עברית</td>
@@ -168,7 +180,7 @@
                     <!--מוטו-->
                     <table class="table table-bordered">
                         <thead>
-                            <tr>מוטו</tr>
+                            <th colspan="2">מוטו</th>
                         </thead>
                         <tr>
                             <td>Gutta Cavat Lapidem - טיפה תיקוב אבן</td>
@@ -184,4 +196,3 @@
 </div>
 </body>
 </html>
-
