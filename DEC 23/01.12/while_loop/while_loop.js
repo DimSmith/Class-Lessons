@@ -1,6 +1,6 @@
-var max=prompt("Please enter first number");
-var den=prompt("Please enter second number");
-var counter=0;
+var max=prompt("Please enter maximum number");
+var den=prompt("Please enter divide number");
+var counter=2;
 
 while (counter <= max){
     if (counter%den==0){
