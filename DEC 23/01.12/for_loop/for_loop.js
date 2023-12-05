@@ -3,5 +3,5 @@ var temp=2;
 2
 for(var counter=1;counter <=num1;counter++){
     console.log(temp);
-    temp*=2;4
+    temp*=2;
 }
