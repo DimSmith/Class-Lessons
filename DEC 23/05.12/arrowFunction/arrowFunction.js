@@ -44,3 +44,4 @@ var wifi = (state,nodeId)=>{
 lightCommand=zigbee;
 lightCommand(false,5);
 
+wifi(true,3);
