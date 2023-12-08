@@ -26,37 +26,37 @@ function Student(studentName,studentClass,studentGrades) {
 
     this.tableHeader = function(){
         return `
-        <table cellspacing="0" border="1" style="margin-left: auto; margin-right: auto;">
-                <th>Name</th>
-                <th>Class</th>
-                <th>Average</th>
-                `;
-        
+            <table cellspacing="0" border="1" style="margin-left: auto;margin-right: auto;">
+                    <th>name</th>
+                    <th>class</th>
+                    <th>grades avg</th>
+            `;
     }
     this.tableData = function(){
         return `
-        <tr>
+            <tr>
             <td>${this.name}</td>
             <td>${this.class}</td>
             <td>${this.getAvg()}</td>
-        </tr>`;
+            </tr>
+        `;
     }
     this.tableFooter = function(){
-        return `</table>`;
+        return `</table>`
     }
 }
 
-function injTable(studentList){
-    let myTable = studentList[0].tableHeader();
-    for(let index=0;index<studentList.length;index++){
+function injectTable(studentList){
+    var myTable = studentList[0].tableHeader();
+    for (var index=0;index<studentList.length;index++){
         myTable+=studentList[index].tableData();
     }
     myTable+=studentList[0].tableFooter();
-    document.getElementById("res").innerHtml = myTable;
+    document.getElementById("res").innerHTML = myTable;
 }
 
-const student1 = new Student("Dima",48,[85,90,92,88,96]);
-const student2 = new Student("Vika",48,[100,100,100,100,100]);
-const student3 = new Student("Rafi",48,[70,85,90,78,86]);
-
-injTable([student1, student2, student3]);
+injectTable([ 
+    new Student("Dima",48,[98,95,100,100,98]),  
+    new Student("Vika",48,[95,100,94,92,98]), 
+    new Student ("Rafi",48,[86,89,92,85,98])
+]);
