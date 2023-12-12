@@ -42,7 +42,6 @@ const addTask = ()=>{
     saveTasks();
 }
 
-
 const clearTasks = ()=>{
     localStorage.removeItem("myTasks")
     tasks=[];
