@@ -1,5 +1,6 @@
 const inputTypes = () => {
     var form = `
+    <form>
     <input type="number" placeholder="Plate Number" id="plateNumber/><br /><br />
     <input type="text" placeholder="field1" id="field1"/><br /><br />
     <input type="text" placeholder="field2" id="field2"/><br /><br />
@@ -8,6 +9,7 @@ const inputTypes = () => {
     <input type="text" placeholder="field5" id="field5"/><br /><br />
     <input type="text" placeholder="field6" id="field6"/><br /><br />
     <input type="text" placeholder="field7" id="field7"/><br /><br />
+    </form>
     <input type="button" value="add Car" id="add" /><br /><br />
     `
     document.getElementById("mySite").innerHTML = form;
@@ -27,13 +29,6 @@ function Cars(plateNumber,field1,field2,field3,field4,field5,field6,field7){
 
 const addCar = ()=>{
     var plateNumber = document.getElementById("plateNumber").value;
-    var field1 = document.getElementById("field1").value;
-    var field2 = document.getElementById("field2").value;
-    var field3 = document.getElementById("field3").value;
-    var field4 = document.getElementById("field4").value;
-    var field5 = document.getElementById("field5").value;
-    var field6 = document.getElementById("field6").value;
-    var field7 = document.getElementById("field7").value;
     cars.push(new Tasks(plateNumber,field1,field2,field3,field4,field5,field6,field7));
     createTable();
 }
