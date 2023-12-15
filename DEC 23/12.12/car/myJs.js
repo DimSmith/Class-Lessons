@@ -1,14 +1,14 @@
 const inputTypes = () => {
     var form = `
     <form>
-    <input type="number" placeholder="Plate Number" id="plateNumber/><br /><br />
-    <input type="text" placeholder="field1" id="field1"/><br /><br />
-    <input type="text" placeholder="field2" id="field2"/><br /><br />
-    <input type="text" placeholder="field3" id="field3"/><br /><br />
-    <input type="text" placeholder="field4" id="field4"/><br /><br />
-    <input type="text" placeholder="field5" id="field5"/><br /><br />
-    <input type="text" placeholder="field6" id="field6"/><br /><br />
-    <input type="text" placeholder="field7" id="field7"/><br /><br />
+    <input type="number" placeholder="Plate Number" id="plateNumber"/><br /><br />
+    <input type="number" placeholder="field1" name="field1"/><br /><br />
+    <input type="number" placeholder="field2" name="field2"/><br /><br />
+    <input type="number" placeholder="field3" name="field3"/><br /><br />
+    <input type="number" placeholder="field4" name="field4"/><br /><br />
+    <input type="number" placeholder="field5" name="field5"/><br /><br />
+    <input type="number" placeholder="field6" name="field6"/><br /><br />
+    <input type="number" placeholder="field7" name="field7"/><br /><br />
     </form>
     <input type="button" value="add Car" id="add" /><br /><br />
     `
@@ -25,14 +25,15 @@ function Cars(plateNumber,field1,field2,field3,field4,field5,field6,field7){
     this.field5=field5;
     this.field6=field6;
     this.field7=field7;
+    
 }
 
 const addCar = ()=>{
     var plateNumber = document.getElementById("plateNumber").value;
-    cars.push(new Tasks(plateNumber,field1,field2,field3,field4,field5,field6,field7));
+    Cars.push(new Tasks(plateNumber,field1,field2,field3,field4,field5,field6,field7));
     createTable();
 }
-var adding = document.getElementById("add").addEventListener("click", addCar);
+//var adding = document.getElementById("add").addEventListener("click", addCar);
 
 function createTable(){
     var result = `<table border="1" cellSpacing="0" style="margin-left:auto;margin-right:auto">`;
@@ -42,7 +43,6 @@ function createTable(){
             <tr>
                 <td>${cars[index].plateNumber}</td>
                 <td>${cars[index].field1}</td>
-                <td>${cars[index].field2}</td>
                 <td>${cars[index].field3}</td>
                 <td>${cars[index].field4}</td>
                 <td>${cars[index].field5}</td>
@@ -54,6 +54,7 @@ function createTable(){
     result+="</table>" 
     document.getElementById("mySite").innerHTML = result;
 }
+
 
 
 
