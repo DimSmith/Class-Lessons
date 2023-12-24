@@ -36,7 +36,7 @@ var mySite = `
         <input type="text" placeholder="year" id="year" disabled/><br/><br/>
         <input type="text" placeholder="nextTest" id="nextTest" disabled/><br/><br/>
         <input type="number" placeholder="km" id="km" required/><br/><br/>
-        <input type="text" placeholder="url image" /><input type="button" value="add image"/>
+        <input type="text" placeholder="url image" id="image" /><input type="button" value="add image" id="addImage"/><br/>
         <div id="carImages"></div>
         <br/><br/>
         <input type="submit" value="add car" id="addCar"/>
@@ -62,6 +62,15 @@ carSite.innerHTML = mySite;
 //     createTable();
 // })
 
+var carImagesStock = [];
+document.getElementById("addImage").addEventListener("click", ()=>{
+    var lnk = document.getElementById("image").value;
+    var carImage =`<img src="${lnk}" width="150" height="75"/>`
+    carImagesStock.push(carImage);
+    document.getElementById("carImages").innerHTML = carImagesStock;
+    console.log(carImagesStock);
+})
+
 const addCar =()=>{
     //check if car not exists and validate
     if (validateCar(document.getElementById("carNumber").value)){
@@ -69,9 +78,12 @@ const addCar =()=>{
         return;
     }
     carInfo.km = document.getElementById("km").value;
+    carInfo.images.assign(carImagesStock);
+    console.log(carInfo);
     addCarData(carInfo);
     allCars.push(carInfo);    
     createTable();
+    saveCars();
     document.getElementById("carForm").reset();
 }
 
@@ -117,7 +129,7 @@ const getCarAPI= async(carNumber)=>{
 }
 
 //create table :)
-const createTable = ()=>{
+function createTable (){
     var tableHeader = `
         <table border="1" cellspacing="0">
             <tr>
@@ -129,6 +141,7 @@ const createTable = ()=>{
                 <th>gasoline</th>
                 <th>test</th>
                 <th>km</th>
+                <th>images</th>
             </tr>
     `
     var tableBody = ()=>{
@@ -145,7 +158,7 @@ const createTable = ()=>{
 }
 
 //get single car row in table
-const addCarData = (carObject)=>{  
+const addCarData = (carObject)=>{         
     return `
         <tr>
             <td>${carObject.mispar_rechev}</td>
@@ -156,6 +169,7 @@ const addCarData = (carObject)=>{
             <td>${carObject.sug_delek_nm}</td>
             <td>${niceDate(carObject.tokef_dt)}</td>
             <td>${carObject.km}</td>
+            <td>${carObject.images}</td>
         </tr>
     `;
 }
