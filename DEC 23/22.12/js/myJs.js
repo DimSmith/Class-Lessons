@@ -11,6 +11,9 @@ const addEvent = () => {
     event.type = document.getElementById("eventType").value;
     event.date = document.getElementById("date").value;
     event.url = document.getElementById("url").value;
+    var id = events.length +1;
+    event.id = id;
+    console.log(id);
 
     //Checking Min and Max
     if(event.min > event.max){
@@ -27,13 +30,14 @@ const addEvent = () => {
     //Pushing the new event to array
     events.push(event);
 
-    console.log(events);
-    
     //Adding event to table
     createTable();
 
     //Clear Form Inputs
     resetForm();
+
+    console.log(events);
+
 };
 
 //Create Table Function
@@ -58,11 +62,11 @@ const createTable = () => {
                 <td>${events[index].type}</td>
                 <td>${events[index].date}</td>
                 <td><img src="${events[index].url}" width="100px"></td>
-                <td><input type="checkbox"></td>
+                <td><input type="button" value="Done" onclick="deleteRow(${events[index].id})"/></td>
             </tr>
         `;
     }
-    document.getElementById("eventList").innerHTML = listHeader+listBody;
+    document.getElementById("eventList").innerHTML = listHeader+listBody;   
 }
 
 //Rest Function
@@ -70,17 +74,11 @@ const resetForm = () => {
     document.getElementById("formList").reset();
 };
 
-const deleteEvent= ()=>{
-    var table = document.getElementById("eventList");
-    var rowCount = table.rows.length;
-    console.log(table);
-    console.log(rowCount);
-    /*
-    for(var index=0; index<rowCount; index++)
-    {
-        table.deleteRow(index);
-        rowCount--;
-        index--;
-    }*/
+const deleteRow = (row) => {
+    var clear = events.filter((array,index)=>{
+        if(array.id === row){
+            events.splice(index, 1);
+            createTable();
+        }
+    })
 }
-    
