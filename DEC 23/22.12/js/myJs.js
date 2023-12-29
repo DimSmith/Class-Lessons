@@ -74,6 +74,7 @@ const resetForm = () => {
     document.getElementById("formList").reset();
 };
 
+//Deleting Specific Event
 const deleteRow = (row) => {
     var clear = events.filter((array,index)=>{
         if(array.id === row){
