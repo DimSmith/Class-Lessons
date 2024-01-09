@@ -68,9 +68,9 @@ const deleteRow = (row) => {
                 document.getElementById("productList").innerHTML = '';
             }
             else{
+                
                 createTable();
             }
-            
         }
     })
 };
