@@ -1,8 +1,8 @@
 class Student{
-    private name:String;
-    private subject:String;
-    private age:number;
-    private grade:number;
+    private name!:String;
+    private subject!:String;
+    private age!:number;
+    private grade!:number;
     
     private static totalStudents:number=0;
     private static totalGrades:number=0;

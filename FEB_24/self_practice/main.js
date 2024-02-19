@@ -1,6 +1,6 @@
-const myURL ="https://restcountries.com/v3.1/all"
-const searchUrl="https://restcountries.com/v3.1/name/"
 $(() => {
+    const myURL ="https://restcountries.com/v3.1/all"
+    const searchUrl="https://restcountries.com/v3.1/name/"
     $("#all").on("click", () => {
         $.get(myURL, (data) => showStatistics(data),
         "json");
@@ -49,7 +49,6 @@ const showStatistics=(data)=>{
             } else {
                 statistics[data[index].region] += numberOfCountries;
             }
-
     }
     displayStatistics(statistics);
 
@@ -60,7 +59,7 @@ const showStatistics=(data)=>{
         Average Population:${avaragePopulation}<br/>
     `)
 
-    
+    console.log(statistics);
 }
 
 const displayStatistics = (data) => {

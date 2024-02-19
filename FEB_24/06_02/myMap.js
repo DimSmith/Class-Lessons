@@ -12,7 +12,7 @@ $(()=>{
         //console.log(response.result.records);
             let myData = response.result.records;
             for (let index = 0; index < myData.length; index++) {
-                if(myData[counter].CityName === userSearch){
+                if(myData[index].CityName === userSearch){
                     let marker = L.marker([myData[index].Lat,myData[index].Long]).addTo(map);
                 }
             };
