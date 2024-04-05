@@ -64,7 +64,3 @@ function AddNewSong(): JSX.Element {
 }
 
 export default AddNewSong;
-
-function addSongFunction(arg0: Song): any {
-    throw new Error("Function not implemented.");
-}
