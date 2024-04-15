@@ -25,8 +25,8 @@ export interface SongAction {
 }
 
 //which function i will use
-export function addSongAction(newSong:Song):SongAction{
-    return{type: SongActionType.addSong, payload:newSong}
+export function addSongFunction(newSong:Song):SongAction{
+    return {type: SongActionType.addSong, payload:newSong}
 }
 
 export function deleteSongAction(id:string):SongAction{

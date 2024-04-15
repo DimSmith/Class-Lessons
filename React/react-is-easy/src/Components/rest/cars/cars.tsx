@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import "./cars.css";
 import axios from "axios";
-import {Car} from "../model/Car";
+import { Car } from "../../../model/Car";
 import SingleCar from "../singleCar/singleCar";
 
 function Cars(): JSX.Element {
@@ -65,6 +65,7 @@ function Cars(): JSX.Element {
                 tozeret_nm: {carInfo?.tozeret_nm}<br/>
                 kinuy_mishari:{carInfo?.kinuy_mishari}<br/>
                 sug_delek_nm:{carInfo?.sug_delek_nm}<br/>
+               
             </div> */}
             {
                 myCars.map(item=><SingleCar key="1" baalut={item.baalut} tozeret_nm={item.tozeret_nm} 

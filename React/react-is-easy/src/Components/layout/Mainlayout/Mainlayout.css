@@ -1,21 +1,21 @@
-.Mainlayout {
-	height: 100%;
+.MainLayout {
+    height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: 15% 75% 10%;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 25% 85% 10%;
+    grid-template-columns: repeat(6, 1fr);
 }
 
-.Mainlayout>header,
-.Mainlayout>footer{
+.MainLayout>header,
+.MainLayout>footer{
     grid-column: span 6;
 }
 
-.Mainlayout>main{
+.MainLayout>main{
     grid-column: span 5;
 }
 
-.Mainlayout,
-.Mainlayout>*{
+.MainLayout,
+.MainLayout>*{
     border: 1px solid white;
 }

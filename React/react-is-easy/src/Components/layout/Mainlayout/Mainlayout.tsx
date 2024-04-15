@@ -1,27 +1,24 @@
 import Cars from "../../rest/cars/cars";
 import Gabriel from "../../targil/gabriel/gabriel";
+import Login from "../login/login";
 import MainFooter from "../MainFooter/MainFooter";
 import MainHeader from "../MainHeader/MainHeader";
 import MainMenu from "../MainMenu/MainMenu";
 import MainPage from "../MainPage/MainPage";
-import Login from "../login/login";
-import "./Mainlayout.css";
+import "./MainLayout.css";
 
-function Mainlayout(): JSX.Element {
+function MainLayout(): JSX.Element {
     return (
-        <div className="Mainlayout">
-            <header>
+        <div className="MainLayout">
+			<header>
                 <MainHeader/>
             </header>
-
             <aside>
                 <MainMenu/>
             </aside>
-
             <main>
-                <Cars/>
+                <Login/>
             </main>
-
             <footer>
                 <MainFooter/>
             </footer>
@@ -29,4 +26,4 @@ function Mainlayout(): JSX.Element {
     );
 }
 
-export default Mainlayout;
+export default MainLayout;

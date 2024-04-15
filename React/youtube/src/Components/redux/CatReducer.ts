@@ -1,77 +1,63 @@
 //npm install redux
 
-import { current } from "@reduxjs/toolkit";
-import { Song } from "../model/song";
-
-//divided to five equal parts
-
-//state of songs
-export class SongState {
-    public allSongs:Song[] = [];
+//state of Cats
+export class CatState{
+    public allCat:String[] = [];
 }
 
-//what action i will use
-export enum SongActionType {
-    addSong="addSong",
-    deleteSong = "deleteSong",
-    searchSong = "searchSong",
-    downloadSong = "downloadSong",
-    addSongCat= "addSongCat"
+//what action i will use...
+export enum CatActionType{
+    addCat = "addCat",
+    deleteCat = "deleteCat",
+    searchCat = "searchCat",
+    downloadCats = "downloadCats",
 }
 
 //action data structure
-export interface SongAction {
-    type: SongActionType;
-    payload?: any;
+export interface CatAction{
+    type: CatActionType,
+    payload?:any;
 }
 
-//which function i will use
-export function addSongAction(newSong:Song):SongAction{
-    return{type: SongActionType.addSong, payload:newSong}
+//which functions i will use
+export function addCatFunction(newCat:String):CatAction{
+    return {type: CatActionType.addCat, payload:newCat}
 }
 
-export function addSongCatAction(newSong:Song):SongAction{
-    return{type: SongActionType.addSongCat, payload:newSong}
+export function deleteCatAction(catName:string):CatAction{
+    return {type: CatActionType.deleteCat}
 }
 
-export function deleteSongAction(id:string):SongAction{
-    return{type: SongActionType.deleteSong}
+export function searchCatAction(CatName:string):CatAction{
+    return {type: CatActionType.searchCat, payload:CatName}
 }
 
-export function searchSongAction(songNAme:string):SongAction{
-    return{type: SongActionType.searchSong, payload:songNAme}
+export function downloadCatAction(allCats:String[]):CatAction{
+    return {type: CatActionType.downloadCats, payload:allCats}
 }
-
-export function downloadSongAction(allSongs:Song[]):SongAction{
-    return{type: SongActionType.downloadSong, payload:allSongs}
-}
-
 
 //reducer - by it's unique function signature
-export function SongReducer(
-    currentState: SongState = new SongState(),
-    action: SongAction): SongState
-    {
-        const newState = {...currentState};
-        switch(action.type){
-            case SongActionType.addSong:
-                newState.allSongs = [...newState.allSongs,action.payload];
-            break;
-            case SongActionType.addSongCat:
-                newState.allSongs = [...newState.allSongs,action.payload];
-            break;
-            case SongActionType.deleteSong:
-                newState.allSongs = [...newState.allSongs].filter(
-                    (item)=> item.id!==action.payload
-                )
-            break;
-            case SongActionType.downloadSong:
-                newState.allSongs = action.payload;
-            break;
-            case SongActionType.searchSong:
-            
-            break;
-        }
+export function CatReducer(
+    currentState: CatState = new CatState(),
+    action: CatAction):CatState
+{
+    const newState = {...currentState};
+    switch(action.type){
+        case CatActionType.addCat:
+            newState.allCat = [...newState.allCat,action.payload];
+        break;
+        case CatActionType.deleteCat:
+            newState.allCat = [...newState.allCat].filter(
+                (item)=> item==action.payload
+            )
+        break;
+        case CatActionType.downloadCats:
+            newState.allCat = action.payload;
+        break;
+        case CatActionType.searchCat:
 
-        return newState;
+        break;
     }
+
+    return newState;
+}
