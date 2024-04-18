@@ -15,7 +15,7 @@ function ExchangesID(props: SingleItem): JSX.Element {
   const nFormat = new Intl.NumberFormat();
 
   console.log(excange);
-  if (params.id?.length != undefined && excange == undefined) {
+  if (params.id?.length !== undefined && excange === undefined) {
     axios.get(EXCHANGE_ID_URL + params.id).then((result) => {
       setItem(result.data.data);
       console.log("repeat");
