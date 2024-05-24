@@ -1,10 +1,10 @@
 {
-  "name": "cars_express_good",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ts-node server.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -21,9 +21,12 @@
     "express-fileupload": "^1.5.0",
     "loadsh": "^0.0.4",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
+    "ts-localstorage": "^3.1.0",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@types/node": "^20.12.8",
     "nodemon": "^3.1.0"
   }
 }

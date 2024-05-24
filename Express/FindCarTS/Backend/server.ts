@@ -7,6 +7,8 @@ import config from "./Utils/config";
 //import router
 import carRouter from "./Routes/vehicles";
 import ErrorHandler from "./MiddleWare/routeNotFound";
+import loginRouter from "./Routes/login";
+
 
 //create server
 const server = express();
@@ -25,6 +27,7 @@ server.use(fileUpload({createParentPath:true}));
 
 //using routes => localhost:8080/api/v1/vehicles
 server.use("/api/v1/vehicles", carRouter);
+server.use("/api/v1/login", loginRouter);
 
 //404 handler
 server.use("*",ErrorHandler);
