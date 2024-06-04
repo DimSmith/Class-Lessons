@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { store } from "../../Redux/store";
 import { logoutAction } from "../../Redux/AuthReducer";
 import notify from "../../Utils/Notify";
+import { checkJWT } from "../../Utils/JWT";
 
 
 export  function MainHeader(): JSX.Element {
@@ -11,6 +12,7 @@ export  function MainHeader(): JSX.Element {
   const navigate = useNavigate();
   store.subscribe(() => {
     setLogged(store.getState().auth.jwt.length>10);
+    //checkJWT();
   });
   useEffect(() => {
     const myJWT = localStorage.getItem("jwt") || "";

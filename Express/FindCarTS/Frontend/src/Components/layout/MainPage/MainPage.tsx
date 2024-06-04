@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import "./MainPage.css";
+import { checkJWT } from "../../Utils/JWT";
 
 export function MainPage(): JSX.Element {
+    useEffect(()=>{
+        checkJWT();
+    },[])
+    
     return (
         <div className="MainPage">
 			<div className="MainPage">
