@@ -8,6 +8,7 @@ const carRouter = express.Router();
 carRouter.get(
     "/car/:id",
     async (request:Request, response:Response, nextFunction:NextFunction)=>{        
+        /*
         const jwt = checkJWT(request.header("Authorization") || "");        
         if (jwt.length>10){
             response
@@ -17,7 +18,12 @@ carRouter.get(
             .json(await carInfo(request.params.id));
         } else {
             response.status(401);
-        }
+        }*/
+        console.log("car info");
+            response
+            .status(200)
+            .header('Access-Control-Expose-Headers', 'Authorization')
+            .json(await carInfo(request.params.id));
     }
 )
 

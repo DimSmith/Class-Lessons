@@ -97,7 +97,7 @@ const forgotPassword = (userName: string) => {
 };
 const deleteUser = async (userId: number) => {
   try {
-    const sql = `DELETE FROM users WHERE id=${userId}`;
+    const sql = `DELETE FROM users WHERE bookId=${userId}`;
     console.log(sql);
     await dal_mysql.execute(sql);
     return true;
