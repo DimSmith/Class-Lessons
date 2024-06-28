@@ -15,6 +15,7 @@ const getAllBooks = async()=>{
 }
 
 const addNewBook = async(newBook:Book)=>{
+    
     const sql =`
     INSERT INTO \`books\` (bookID, authorID ,bookName,pages,price)
     VALUES (0, ${newBook.authorID}, '${newBook.bookName}', ${newBook.totalPages}, ${newBook.bookPrice})

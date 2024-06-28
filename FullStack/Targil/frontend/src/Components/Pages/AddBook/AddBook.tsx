@@ -16,7 +16,6 @@ type bookData = {
 export function AddBook(): JSX.Element {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm<bookData>();
-    
     const [authors,setAuthors]=useState<Author[]>([]);
     useEffect(()=>{
         axios.get("http://localhost:8080/api/v1/authors/all")
